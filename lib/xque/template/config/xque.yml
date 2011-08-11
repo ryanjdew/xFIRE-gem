@@ -1,0 +1,9 @@
+development:
+    username:'<%=username%>'
+    password:'<%=password%>'
+    marklogic_port:<%=marklogic_port%>
+    group:'<%=group%>'
+    app_name:'<%=app_name%>'
+    app_port:<%=app_port%>
+    database:'<%=database%>'
+    forest:'<%=forest%>'

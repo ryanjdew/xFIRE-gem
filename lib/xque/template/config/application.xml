@@ -1,0 +1,12 @@
+<application name="<%=app_name%>" port="<%=app_port%>">
+	<users>
+		<default-user name="<%=username%>" password="<%=password%>">
+		</default-user>
+	</users>
+	<datadases>
+		<default-database>
+			
+		</default-database>
+	<databases>
+	
+</application>

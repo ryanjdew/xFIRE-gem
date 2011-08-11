@@ -1,0 +1,3 @@
+#!/usr/bin/ruby
+
+require 'xque/xque_cli'
