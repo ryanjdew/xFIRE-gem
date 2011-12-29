@@ -2,10 +2,10 @@
 require 'rubygems'
 require 'xcc'
 require 'fileutils'
-require 'xque/xque_setup'
+require 'xFire/xfire_setup'
 require 'thor'
 
-module Xque
+module Xfire
   class CLI < Thor
     desc "new [APP_NAME]", "create your XQuery App"
     def new(app_name)
@@ -28,4 +28,4 @@ module Xque
     end
   end
 end
-Xque::CLI.start
+Xfire::CLI.start

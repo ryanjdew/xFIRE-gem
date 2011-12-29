@@ -1,0 +1,54 @@
+<xview xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<doc-query>
+		<xsl:stylesheet version="2.0"
+			xmlns:xdmp="http://marklogic.com/xdmp">
+			<xsl:param name="lang"/>
+			<xsl:param name="orig-path"/>
+			<xsl:template match="cts-query">
+			<cts:element-query xmlns:cts="http://marklogic.com/cts">
+				<cts:element>article</cts:element>
+				<cts:and-query>
+					<cts:element-attribute-value-query>
+						<cts:element>article</cts:element>
+						<cts:attribute>locale</cts:attribute>
+						<cts:text><xsl:value-of select="$lang"/></cts:text>
+						<cts:option>case-sensitive</cts:option>
+						<cts:option>diacritic-sensitive</cts:option>
+						<cts:option>punctuation-sensitive</cts:option>
+						<cts:option>whitespace-sensitive</cts:option>
+						<cts:option>unstemmed</cts:option>
+						<cts:option>unwildcarded</cts:option>
+					</cts:element-attribute-value-query>
+					<cts:element-attribute-value-query>
+						<cts:element>article</cts:element>
+						<cts:attribute>uri</cts:attribute>
+						<cts:text><xsl:value-of select="$orig-path"/></cts:text>
+						<cts:option>case-sensitive</cts:option>
+						<cts:option>diacritic-sensitive</cts:option>
+						<cts:option>punctuation-sensitive</cts:option>
+						<cts:option>whitespace-sensitive</cts:option>
+						<cts:option>unstemmed</cts:option>
+						<cts:option>unwildcarded</cts:option>
+					</cts:element-attribute-value-query>
+				</cts:and-query>
+			</cts:element-query>
+			</xsl:template>
+		</xsl:stylesheet>
+	</doc-query>
+	<page>
+		<xsl:stylesheet version="2.0" 
+			xmlns:xdmp="http://marklogic.com/xdmp"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:xfire-layout="/xFire/layout"
+			exclude-result-prefixes="xs xdmp xfire-layout"
+			extension-element-prefixes="xdmp xfire-layout">
+			<xdmp:import-module href="/lib/layout.xqy" namespace="/xFire/layout"/>
+			<xsl:template match="article">
+				<xsl:value-of select="xfire-layout:content-for('title', title/node())" />
+				<div>
+					<xsl:copy-of select="body/node()" />
+				</div>
+			</xsl:template>
+		</xsl:stylesheet>
+	</page>
+</xview>

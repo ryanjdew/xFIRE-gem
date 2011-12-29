@@ -1,0 +1,12 @@
+<routes>
+    <root>users/list.xqy</root>
+    <get path="users/:id">
+      <to>users/show.xqy</to>
+    </get>
+    <get path="users/:id">
+      <to>users/show.xqy</to>
+    </get>
+    <get path="articles/:year/:month/:uri-title">
+      <to>views/home.xview</to>
+    </get>
+</routes> 

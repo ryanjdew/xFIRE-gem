@@ -1,0 +1,3 @@
+#!/usr/bin/ruby
+
+require 'xFire/xfire_cli'

@@ -1,6 +1,0 @@
-<routes>
-    <root>users/list</root>
-    <get path="users/:id">
-      <to>users/show</to>
-    </get>
-</routes>

@@ -1,9 +1,8 @@
-(:This is taken from a separate routes project provided by Nuno Job
- See his website: http://nunojob.com :)
 xquery version "1.0-ml" ;
 
 module  namespace r  = "routes.xqy" ;
-declare namespace s  = "http://www.w3.org/2009/xpath-functions/analyze-string" ;
+declare namespace 
+  s  = "http://www.w3.org/2009/xpath-functions/analyze-string" ;
 
 declare variable $cacheNs             := 'rewrite::' ;
 declare variable $resourceDirectory   := 'resource' ;
@@ -12,7 +11,8 @@ declare variable $xqyExtension        := 'xqy' ;
 declare variable $redirectResource    := 'redirect' ;
 declare variable $staticPath          := '/:static/:remainder' ;
 declare variable $redirectPath        := '/:dir/:redirect.:ext?url=:url' ;
-declare variable $defaultPath         := '/:dir/:resource.:ext?action=:action' ;
+declare variable $defaultPath         := 
+  '/:dir/:resource?action=:action' ;
 
 declare variable $resourceActionSeparator          := "#" ;
 declare variable $dynamicRouteDelimiter            := ':' ;
