@@ -1,6 +1,6 @@
 require 'fileutils'
 require 'erubis'
-module Xque
+module Xfire
   module Setup
     def self.build(app_name)
       directory_name = File.join(Dir::pwd,app_name)
@@ -8,7 +8,7 @@ module Xque
         puts "Sorry, folder already exists"
       else        
         FileUtils.cp_r "#{File.dirname(__FILE__)}/template/application", directory_name
-        input = File.read("#{File.dirname(__FILE__)}/template/config/xque.yml")
+        input = File.read("#{File.dirname(__FILE__)}/template/config/xfire.yml")
         eruby = Erubis::Eruby.new(input)    # create Eruby object
 
         print "Enter Username [admin]:"
@@ -39,7 +39,7 @@ module Xque
         forest = STDIN.gets.chomp 
         forest = (forest == '') ? "#{app_name}_FRST" : forest
 
-        File.open(File.join(directory_name,'xque.yml'), 'w') {|f| f.write(eruby.result(binding())) }
+        File.open(File.join(directory_name,'xfire.yml'), 'w') {|f| f.write(eruby.result(binding())) }
       end
     end
   end

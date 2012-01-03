@@ -8,7 +8,7 @@ let $routes-cfg := xdmp:document-get($route-path)/*
 let $selected-route := r:selectedRoute($routes-cfg)
 let $orig-url := xdmp:get-original-url()
 return if (fn:matches($selected-route, '\.xview')) 
-	   then fn:concat('/lib/xview_bridge.xqy?xviewUrl=',
+	   then fn:concat('/lib/xview_bridge.xqy?xview-url=',
 						xdmp:url-encode(
 							fn:concat(
 								$selected-route, 

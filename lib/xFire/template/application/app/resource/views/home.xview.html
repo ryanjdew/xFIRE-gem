@@ -2,7 +2,7 @@
 	<doc-query>
 		<xsl:stylesheet version="2.0"
 			xmlns:xdmp="http://marklogic.com/xdmp">
-			<xsl:param name="lang"/>
+			<xsl:param name="locale"/>
 			<xsl:param name="orig-path"/>
 			<xsl:template match="cts-query">
 			<cts:element-query xmlns:cts="http://marklogic.com/cts">
@@ -11,7 +11,7 @@
 					<cts:element-attribute-value-query>
 						<cts:element>article</cts:element>
 						<cts:attribute>locale</cts:attribute>
-						<cts:text><xsl:value-of select="$lang"/></cts:text>
+						<cts:text><xsl:value-of select="$locale"/></cts:text>
 						<cts:option>case-sensitive</cts:option>
 						<cts:option>diacritic-sensitive</cts:option>
 						<cts:option>punctuation-sensitive</cts:option>
