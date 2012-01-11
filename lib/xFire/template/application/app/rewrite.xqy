@@ -11,7 +11,7 @@ return if (fn:matches($selected-route, '\.xview'))
 	   then fn:concat('/lib/xview_bridge.xqy?xview-url=',
 						xdmp:url-encode(
 							fn:concat(
-								$selected-route, 
+								fn:replace($selected-route,'\.xview', ''), 
 								if (fn:contains($selected-route, '?')) then '&amp;' else '?', 
 								'orig-path=',if (fn:contains($orig-url, '?')) then fn:substring-before($orig-url, '?') else $orig-url 
 							)
