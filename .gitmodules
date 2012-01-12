@@ -1,3 +1,3 @@
-[submodule "lib\\xFire\\template\\application\\app"]
-	path = lib\\xFire\\template\\application\\app
+[submodule "lib/xFire/template/application/app"]
+	path = lib/xFire/template/application/app
 	url = git://github.com/ryanjdew/xFIRE.git
