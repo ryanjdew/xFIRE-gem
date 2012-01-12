@@ -3,16 +3,14 @@
 			xmlns:xdmp="http://marklogic.com/xdmp">
 	<xsl:param name="locale"/>
 	<xsl:param name="orig-path"/>
-	<xsl:template match="*">
+	<xsl:template match="/">
 		<cts:element-query xmlns:cts="http://marklogic.com/cts">
 			<cts:element>article</cts:element>
 			<cts:and-query>
 				<cts:element-attribute-value-query>
 					<cts:element>article</cts:element>
 					<cts:attribute>locale</cts:attribute>
-					<cts:text>
-						<xsl:value-of select="$locale"/>
-					</cts:text>
+					<cts:text><xsl:value-of select="$locale"/></cts:text>
 					<cts:option>case-sensitive</cts:option>
 					<cts:option>diacritic-sensitive</cts:option>
 					<cts:option>punctuation-sensitive</cts:option>
@@ -23,9 +21,7 @@
 				<cts:element-attribute-value-query>
 					<cts:element>article</cts:element>
 					<cts:attribute>uri</cts:attribute>
-					<cts:text>
-						<xsl:value-of select="$orig-path"/>
-					</cts:text>
+					<cts:text><xsl:value-of select="$orig-path"/></cts:text>
 					<cts:option>case-sensitive</cts:option>
 					<cts:option>diacritic-sensitive</cts:option>
 					<cts:option>punctuation-sensitive</cts:option>

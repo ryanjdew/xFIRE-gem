@@ -7,7 +7,7 @@
 			extension-element-prefixes="xdmp xfire-layout">
 	<xdmp:import-module href="/lib/layout.xqy" namespace="/xFire/layout"/>
 
-	<xsl:template match="article">
+	<xsl:template match="/article">
 		<xsl:value-of select="xfire-layout:content-for('title', title/node())" />
 		<div>
 			<xsl:copy-of select="body/node()" />

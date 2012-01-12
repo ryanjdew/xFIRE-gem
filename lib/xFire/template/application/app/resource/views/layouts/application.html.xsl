@@ -7,7 +7,7 @@
 		extension-element-prefixes="xdmp xfire-layout">
 	<xsl:output method="html" />
 	<xdmp:import-module href="/lib/layout.xqy" namespace="/xFire/layout"/>
-	<xsl:template match="*">
+	<xsl:template match="/">
 		<html>
 			<head>
 				<title>
